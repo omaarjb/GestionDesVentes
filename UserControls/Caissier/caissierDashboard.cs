@@ -149,5 +149,15 @@ namespace GestionDeVente
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void todayProfit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

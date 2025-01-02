@@ -41,30 +41,41 @@ namespace GestionDeVente
 
         }
 
-        private void login_registerBtn_Click(object sender, EventArgs e)
-        {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
-            this.Hide();
-        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void login_showPass_CheckedChanged(object sender, EventArgs e)
-        {
 
-            login_password.PasswordChar = login_showPass.Checked ? '\0' : '*';
-        }
 
         private void login_password_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void login_btn_Click(object sender, EventArgs e)
+
+
+        public bool VerifyPassword(string enteredPassword, string storedHashedPassword)
+        {
+
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(enteredPassword));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+
+                string hashedEnteredPassword = builder.ToString();
+                Debug.WriteLine($"Entered Hashed Password: {hashedEnteredPassword}");
+                return hashedEnteredPassword == storedHashedPassword;
+            }
+        }
+
+        private void lgnBtn_Click(object sender, EventArgs e)
         {
             if (login_username.Text == "" || login_password.Text == "")
             {
@@ -132,22 +143,16 @@ namespace GestionDeVente
             }
         }
 
-        public bool VerifyPassword(string enteredPassword, string storedHashedPassword)
+        private void regBtn_Click(object sender, EventArgs e)
         {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
 
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(enteredPassword));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-
-                string hashedEnteredPassword = builder.ToString();
-                Debug.WriteLine($"Entered Hashed Password: {hashedEnteredPassword}");
-                return hashedEnteredPassword == storedHashedPassword;
-            }
+        private void logPass_CheckedChanged(object sender, EventArgs e)
+        {
+            login_password.PasswordChar = logPass.Checked ? '\0' : '*';
         }
     }
 }

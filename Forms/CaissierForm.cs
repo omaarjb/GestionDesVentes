@@ -1,8 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using MaterialSkin.Controls;
+using System.Windows.Forms;
 
 namespace GestionDeVente
 {
-    public partial class CaissierForm : Form
+    public partial class CaissierForm : MaterialForm
     {
         public CaissierForm()
         {
@@ -15,22 +16,24 @@ namespace GestionDeVente
 
         }
 
-        private void logout_btn_Click(object sender, System.EventArgs e)
-        {
-            if (MessageBox.Show("Voulez vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                LoginForm form1 = new LoginForm();
-                form1.Show();
-                this.Hide();
-            }
-        }
+
 
         private void caissierCommandes1_Load(object sender, System.EventArgs e)
         {
 
         }
 
-        private void dashboard_btn_Click(object sender, System.EventArgs e)
+
+
+
+
+
+        private void label1_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void dashBtn_Click(object sender, System.EventArgs e)
         {
             caissierDashboard1.Visible = true;
             caissierCommandes1.Visible = false;
@@ -43,7 +46,7 @@ namespace GestionDeVente
             }
         }
 
-        private void orders_btn_Click(object sender, System.EventArgs e)
+        private void ordBtn_Click(object sender, System.EventArgs e)
         {
             caissierDashboard1.Visible = false;
             caissierCommandes1.Visible = true;
@@ -56,7 +59,7 @@ namespace GestionDeVente
             }
         }
 
-        private void customers_btn_Click(object sender, System.EventArgs e)
+        private void histBtn_Click(object sender, System.EventArgs e)
         {
             caissierDashboard1.Visible = false;
             caissierCommandes1.Visible = false;
@@ -69,7 +72,17 @@ namespace GestionDeVente
             }
         }
 
-        private void label1_Click(object sender, System.EventArgs e)
+        private void decBtn_Click(object sender, System.EventArgs e)
+        {
+            if (MessageBox.Show("Voulez vous déconnecter ?", "Déconnexion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LoginForm form1 = new LoginForm();
+                form1.Show();
+                this.Hide();
+            }
+        }
+
+        private void customerHistoriqueCommande1_Load(object sender, System.EventArgs e)
         {
 
         }

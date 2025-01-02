@@ -43,7 +43,31 @@ namespace GestionDeVente
 
         }
 
-        private void addCategories_addBtn_Click(object sender, EventArgs e)
+
+
+
+
+
+        private int getID = 0;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                getID = Convert.ToInt32(row.Cells[0].Value);
+                addCategories_category.Text = row.Cells[1].Value.ToString();
+                addCategories_status.SelectedItem = row.Cells[2].Value.ToString();
+            }
+        }
+
+
+
+        private void addCategories_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addCatBtn_Click(object sender, EventArgs e)
         {
             if (addCategories_category.Text == "" || addCategories_status.SelectedIndex == -1)
             {
@@ -94,12 +118,7 @@ namespace GestionDeVente
             }
         }
 
-        private void addCategories_clearBtn_Click(object sender, EventArgs e)
-        {
-            clearFields();
-        }
-
-        private void addCategories_updateBtn_Click(object sender, EventArgs e)
+        private void ubdCatBtn_Click(object sender, EventArgs e)
         {
             if (addCategories_category.Text == "" || addCategories_status.SelectedIndex == -1)
             {
@@ -161,19 +180,8 @@ namespace GestionDeVente
                 displayAddCategories();
             }
         }
-        private int getID = 0;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                getID = Convert.ToInt32(row.Cells[0].Value);
-                addCategories_category.Text = row.Cells[1].Value.ToString();
-                addCategories_status.SelectedItem = row.Cells[2].Value.ToString();
-            }
-        }
 
-        private void addCategories_deleteBtn_Click(object sender, EventArgs e)
+        private void delCatBtn_Click(object sender, EventArgs e)
         {
             if (addCategories_category.Text == "" || addCategories_status.SelectedIndex == -1)
             {
@@ -200,6 +208,11 @@ namespace GestionDeVente
                 }
 
             }
+        }
+
+        private void clearCatBtn_Click(object sender, EventArgs e)
+        {
+            clearFields();
         }
     }
 }

@@ -26,20 +26,37 @@ namespace GestionDeVente
 
         }
 
-        private void register_showPass_CheckedChanged(object sender, EventArgs e)
+
+
+
+
+        public string HashPassword(string password)
         {
-            register_password.PasswordChar = register_showPass.Checked ? '\0' : '*';
-            register_confirmPass.PasswordChar = register_showPass.Checked ? '\0' : '*';
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
 
-        private void register_loginBtn_Click(object sender, EventArgs e)
+        private void registerForm_Load(object sender, EventArgs e)
         {
-            LoginForm form1 = new LoginForm();
-            form1.Show();
-            this.Hide();
+
         }
 
-        private void register_btn_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regiBtn_Click(object sender, EventArgs e)
         {
             if (register_username.Text == "" || register_password.Text == "" || register_confirmPass.Text == "")
             {
@@ -98,29 +115,18 @@ namespace GestionDeVente
                 }
             }
         }
-        public string HashPassword(string password)
+
+        private void regLogBtn_Click(object sender, EventArgs e)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
+            LoginForm form1 = new LoginForm();
+            form1.Show();
+            this.Hide();
         }
 
-        private void registerForm_Load(object sender, EventArgs e)
+        private void register_showPass_CheckedChanged_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+            register_password.PasswordChar = register_showPass.Checked ? '\0' : '*';
+            register_confirmPass.PasswordChar = register_showPass.Checked ? '\0' : '*';
 
         }
     }

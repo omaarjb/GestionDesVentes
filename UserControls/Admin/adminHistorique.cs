@@ -25,5 +25,10 @@ namespace GestionDeVente
             LigneCommandeAdmin ligneCommandeAdmin = new LigneCommandeAdmin();
             dataGridView1.DataSource = ligneCommandeAdmin.customerDataList();
         }
+
+        private void adminHistorique_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

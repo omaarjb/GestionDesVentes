@@ -32,27 +32,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addProducts_clearBtn = new System.Windows.Forms.Button();
-            this.addProducts_deleteBtn = new System.Windows.Forms.Button();
-            this.addProducts_updateBtn = new System.Windows.Forms.Button();
-            this.addProducts_addBtn = new System.Windows.Forms.Button();
-            this.addProducts_importBtn = new System.Windows.Forms.Button();
+            this.updProdBtn = new MaterialSkin.Controls.MaterialButton();
+            this.delProdBtn = new MaterialSkin.Controls.MaterialButton();
+            this.addProdBtn = new MaterialSkin.Controls.MaterialButton();
+            this.addProducts_status = new MaterialSkin.Controls.MaterialComboBox();
+            this.addProducts_price = new MaterialSkin.Controls.MaterialTextBox2();
+            this.addProducts_category = new MaterialSkin.Controls.MaterialComboBox();
+            this.addProdImportBtn = new MaterialSkin.Controls.MaterialButton();
+            this.addProducts_stock = new MaterialSkin.Controls.MaterialTextBox2();
+            this.addProducts_prodName = new MaterialSkin.Controls.MaterialTextBox2();
+            this.addProducts_prodId = new MaterialSkin.Controls.MaterialTextBox2();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addProducts_imageView = new System.Windows.Forms.PictureBox();
-            this.addProducts_status = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.addProducts_stock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.addProducts_price = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.addProducts_category = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.addProducts_prodName = new System.Windows.Forms.TextBox();
-            this.addProducts_prodId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clearProdBtn = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProducts_imageView)).BeginInit();
@@ -63,105 +63,273 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel1.Controls.Add(this.addProducts_clearBtn);
-            this.panel1.Controls.Add(this.addProducts_deleteBtn);
-            this.panel1.Controls.Add(this.addProducts_updateBtn);
-            this.panel1.Controls.Add(this.addProducts_addBtn);
-            this.panel1.Controls.Add(this.addProducts_importBtn);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.clearProdBtn);
+            this.panel1.Controls.Add(this.updProdBtn);
+            this.panel1.Controls.Add(this.delProdBtn);
+            this.panel1.Controls.Add(this.addProdBtn);
             this.panel1.Controls.Add(this.addProducts_status);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.addProducts_stock);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.addProducts_price);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.addProducts_category);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.addProdImportBtn);
+            this.panel1.Controls.Add(this.addProducts_stock);
             this.panel1.Controls.Add(this.addProducts_prodName);
             this.panel1.Controls.Add(this.addProducts_prodId);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(38, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 327);
+            this.panel1.Size = new System.Drawing.Size(1353, 366);
             this.panel1.TabIndex = 0;
             // 
-            // addProducts_clearBtn
+            // updProdBtn
             // 
-            this.addProducts_clearBtn.BackColor = System.Drawing.Color.SlateBlue;
-            this.addProducts_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProducts_clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_clearBtn.Location = new System.Drawing.Point(991, 273);
-            this.addProducts_clearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addProducts_clearBtn.Name = "addProducts_clearBtn";
-            this.addProducts_clearBtn.Size = new System.Drawing.Size(147, 31);
-            this.addProducts_clearBtn.TabIndex = 17;
-            this.addProducts_clearBtn.Text = "EFFACER";
-            this.addProducts_clearBtn.UseVisualStyleBackColor = false;
-            this.addProducts_clearBtn.Click += new System.EventHandler(this.addProducts_clearBtn_Click);
+            this.updProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.updProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.updProdBtn.Depth = 0;
+            this.updProdBtn.HighEmphasis = true;
+            this.updProdBtn.Icon = null;
+            this.updProdBtn.Location = new System.Drawing.Point(900, 312);
+            this.updProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.updProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.updProdBtn.Name = "updProdBtn";
+            this.updProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.updProdBtn.Size = new System.Drawing.Size(88, 36);
+            this.updProdBtn.TabIndex = 27;
+            this.updProdBtn.Text = "modifier";
+            this.updProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.updProdBtn.UseAccentColor = true;
+            this.updProdBtn.UseVisualStyleBackColor = true;
+            this.updProdBtn.Click += new System.EventHandler(this.updProdBtn_Click);
             // 
-            // addProducts_deleteBtn
+            // delProdBtn
             // 
-            this.addProducts_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addProducts_deleteBtn.FlatAppearance.BorderSize = 0;
-            this.addProducts_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProducts_deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.addProducts_deleteBtn.Location = new System.Drawing.Point(991, 218);
-            this.addProducts_deleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addProducts_deleteBtn.Name = "addProducts_deleteBtn";
-            this.addProducts_deleteBtn.Size = new System.Drawing.Size(147, 31);
-            this.addProducts_deleteBtn.TabIndex = 16;
-            this.addProducts_deleteBtn.Text = "SUPPRIMER";
-            this.addProducts_deleteBtn.UseVisualStyleBackColor = false;
-            this.addProducts_deleteBtn.Click += new System.EventHandler(this.addProducts_deleteBtn_Click);
+            this.delProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.delProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.delProdBtn.Depth = 0;
+            this.delProdBtn.HighEmphasis = true;
+            this.delProdBtn.Icon = null;
+            this.delProdBtn.Location = new System.Drawing.Point(1064, 261);
+            this.delProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.delProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.delProdBtn.Name = "delProdBtn";
+            this.delProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.delProdBtn.Size = new System.Drawing.Size(102, 36);
+            this.delProdBtn.TabIndex = 26;
+            this.delProdBtn.Text = "supprimer";
+            this.delProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.delProdBtn.UseAccentColor = true;
+            this.delProdBtn.UseVisualStyleBackColor = true;
+            this.delProdBtn.Click += new System.EventHandler(this.delProdBtn_Click);
             // 
-            // addProducts_updateBtn
+            // addProdBtn
             // 
-            this.addProducts_updateBtn.BackColor = System.Drawing.Color.Orange;
-            this.addProducts_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProducts_updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_updateBtn.Location = new System.Drawing.Point(815, 273);
-            this.addProducts_updateBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addProducts_updateBtn.Name = "addProducts_updateBtn";
-            this.addProducts_updateBtn.Size = new System.Drawing.Size(148, 31);
-            this.addProducts_updateBtn.TabIndex = 15;
-            this.addProducts_updateBtn.Text = "MODIFIER";
-            this.addProducts_updateBtn.UseVisualStyleBackColor = false;
-            this.addProducts_updateBtn.Click += new System.EventHandler(this.addProducts_updateBtn_Click);
+            this.addProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.addProdBtn.Depth = 0;
+            this.addProdBtn.HighEmphasis = true;
+            this.addProdBtn.Icon = null;
+            this.addProdBtn.Location = new System.Drawing.Point(900, 261);
+            this.addProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addProdBtn.Name = "addProdBtn";
+            this.addProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.addProdBtn.Size = new System.Drawing.Size(85, 36);
+            this.addProdBtn.TabIndex = 25;
+            this.addProdBtn.Text = "Ajouter";
+            this.addProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addProdBtn.UseAccentColor = false;
+            this.addProdBtn.UseVisualStyleBackColor = true;
+            this.addProdBtn.Click += new System.EventHandler(this.addProdBtn_Click);
             // 
-            // addProducts_addBtn
+            // addProducts_status
             // 
-            this.addProducts_addBtn.BackColor = System.Drawing.Color.Lime;
-            this.addProducts_addBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.addProducts_addBtn.FlatAppearance.BorderSize = 0;
-            this.addProducts_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProducts_addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_addBtn.Location = new System.Drawing.Point(815, 218);
-            this.addProducts_addBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.addProducts_addBtn.Name = "addProducts_addBtn";
-            this.addProducts_addBtn.Size = new System.Drawing.Size(148, 31);
-            this.addProducts_addBtn.TabIndex = 14;
-            this.addProducts_addBtn.Text = "AJOUTER";
-            this.addProducts_addBtn.UseVisualStyleBackColor = false;
-            this.addProducts_addBtn.Click += new System.EventHandler(this.addProducts_addBtn_Click);
+            this.addProducts_status.AutoResize = false;
+            this.addProducts_status.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.addProducts_status.Depth = 0;
+            this.addProducts_status.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.addProducts_status.DropDownHeight = 174;
+            this.addProducts_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addProducts_status.DropDownWidth = 121;
+            this.addProducts_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.addProducts_status.FormattingEnabled = true;
+            this.addProducts_status.IntegralHeight = false;
+            this.addProducts_status.ItemHeight = 43;
+            this.addProducts_status.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.addProducts_status.Location = new System.Drawing.Point(876, 172);
+            this.addProducts_status.MaxDropDownItems = 4;
+            this.addProducts_status.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_status.Name = "addProducts_status";
+            this.addProducts_status.Size = new System.Drawing.Size(335, 49);
+            this.addProducts_status.StartIndex = 0;
+            this.addProducts_status.TabIndex = 24;
             // 
-            // addProducts_importBtn
+            // addProducts_price
             // 
-            this.addProducts_importBtn.Location = new System.Drawing.Point(428, 242);
-            this.addProducts_importBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_importBtn.Name = "addProducts_importBtn";
-            this.addProducts_importBtn.Size = new System.Drawing.Size(100, 28);
-            this.addProducts_importBtn.TabIndex = 13;
-            this.addProducts_importBtn.Text = "Importer";
-            this.addProducts_importBtn.UseVisualStyleBackColor = true;
-            this.addProducts_importBtn.Click += new System.EventHandler(this.addProducts_importBtn_Click);
+            this.addProducts_price.AnimateReadOnly = false;
+            this.addProducts_price.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addProducts_price.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addProducts_price.Depth = 0;
+            this.addProducts_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_price.HideSelection = true;
+            this.addProducts_price.LeadingIcon = null;
+            this.addProducts_price.Location = new System.Drawing.Point(876, 98);
+            this.addProducts_price.MaxLength = 32767;
+            this.addProducts_price.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_price.Name = "addProducts_price";
+            this.addProducts_price.PasswordChar = '\0';
+            this.addProducts_price.PrefixSuffixText = null;
+            this.addProducts_price.ReadOnly = false;
+            this.addProducts_price.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addProducts_price.SelectedText = "";
+            this.addProducts_price.SelectionLength = 0;
+            this.addProducts_price.SelectionStart = 0;
+            this.addProducts_price.ShortcutsEnabled = true;
+            this.addProducts_price.Size = new System.Drawing.Size(257, 48);
+            this.addProducts_price.TabIndex = 23;
+            this.addProducts_price.TabStop = false;
+            this.addProducts_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addProducts_price.TrailingIcon = null;
+            this.addProducts_price.UseSystemPasswordChar = false;
+            // 
+            // addProducts_category
+            // 
+            this.addProducts_category.AutoResize = false;
+            this.addProducts_category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.addProducts_category.Depth = 0;
+            this.addProducts_category.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.addProducts_category.DropDownHeight = 174;
+            this.addProducts_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addProducts_category.DropDownWidth = 121;
+            this.addProducts_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.addProducts_category.FormattingEnabled = true;
+            this.addProducts_category.IntegralHeight = false;
+            this.addProducts_category.ItemHeight = 43;
+            this.addProducts_category.Location = new System.Drawing.Point(876, 9);
+            this.addProducts_category.MaxDropDownItems = 4;
+            this.addProducts_category.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_category.Name = "addProducts_category";
+            this.addProducts_category.Size = new System.Drawing.Size(335, 49);
+            this.addProducts_category.StartIndex = 0;
+            this.addProducts_category.TabIndex = 22;
+            // 
+            // addProdImportBtn
+            // 
+            this.addProdImportBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addProdImportBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.addProdImportBtn.Depth = 0;
+            this.addProdImportBtn.HighEmphasis = true;
+            this.addProdImportBtn.Icon = null;
+            this.addProdImportBtn.Location = new System.Drawing.Point(444, 284);
+            this.addProdImportBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addProdImportBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addProdImportBtn.Name = "addProdImportBtn";
+            this.addProdImportBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.addProdImportBtn.Size = new System.Drawing.Size(94, 36);
+            this.addProdImportBtn.TabIndex = 21;
+            this.addProdImportBtn.Text = "importer";
+            this.addProdImportBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addProdImportBtn.UseAccentColor = false;
+            this.addProdImportBtn.UseVisualStyleBackColor = true;
+            this.addProdImportBtn.Click += new System.EventHandler(this.addProdImportBtn_Click);
+            // 
+            // addProducts_stock
+            // 
+            this.addProducts_stock.AnimateReadOnly = false;
+            this.addProducts_stock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addProducts_stock.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addProducts_stock.Depth = 0;
+            this.addProducts_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_stock.HideSelection = true;
+            this.addProducts_stock.LeadingIcon = null;
+            this.addProducts_stock.Location = new System.Drawing.Point(258, 173);
+            this.addProducts_stock.MaxLength = 32767;
+            this.addProducts_stock.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_stock.Name = "addProducts_stock";
+            this.addProducts_stock.PasswordChar = '\0';
+            this.addProducts_stock.PrefixSuffixText = null;
+            this.addProducts_stock.ReadOnly = false;
+            this.addProducts_stock.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addProducts_stock.SelectedText = "";
+            this.addProducts_stock.SelectionLength = 0;
+            this.addProducts_stock.SelectionStart = 0;
+            this.addProducts_stock.ShortcutsEnabled = true;
+            this.addProducts_stock.Size = new System.Drawing.Size(257, 48);
+            this.addProducts_stock.TabIndex = 20;
+            this.addProducts_stock.TabStop = false;
+            this.addProducts_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addProducts_stock.TrailingIcon = null;
+            this.addProducts_stock.UseSystemPasswordChar = false;
+            // 
+            // addProducts_prodName
+            // 
+            this.addProducts_prodName.AnimateReadOnly = false;
+            this.addProducts_prodName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addProducts_prodName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addProducts_prodName.Depth = 0;
+            this.addProducts_prodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_prodName.HideSelection = true;
+            this.addProducts_prodName.LeadingIcon = null;
+            this.addProducts_prodName.Location = new System.Drawing.Point(258, 98);
+            this.addProducts_prodName.MaxLength = 32767;
+            this.addProducts_prodName.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_prodName.Name = "addProducts_prodName";
+            this.addProducts_prodName.PasswordChar = '\0';
+            this.addProducts_prodName.PrefixSuffixText = null;
+            this.addProducts_prodName.ReadOnly = false;
+            this.addProducts_prodName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addProducts_prodName.SelectedText = "";
+            this.addProducts_prodName.SelectionLength = 0;
+            this.addProducts_prodName.SelectionStart = 0;
+            this.addProducts_prodName.ShortcutsEnabled = true;
+            this.addProducts_prodName.Size = new System.Drawing.Size(257, 48);
+            this.addProducts_prodName.TabIndex = 19;
+            this.addProducts_prodName.TabStop = false;
+            this.addProducts_prodName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addProducts_prodName.TrailingIcon = null;
+            this.addProducts_prodName.UseSystemPasswordChar = false;
+            // 
+            // addProducts_prodId
+            // 
+            this.addProducts_prodId.AnimateReadOnly = false;
+            this.addProducts_prodId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addProducts_prodId.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addProducts_prodId.Depth = 0;
+            this.addProducts_prodId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addProducts_prodId.HideSelection = true;
+            this.addProducts_prodId.LeadingIcon = null;
+            this.addProducts_prodId.Location = new System.Drawing.Point(258, 9);
+            this.addProducts_prodId.MaxLength = 32767;
+            this.addProducts_prodId.MouseState = MaterialSkin.MouseState.OUT;
+            this.addProducts_prodId.Name = "addProducts_prodId";
+            this.addProducts_prodId.PasswordChar = '\0';
+            this.addProducts_prodId.PrefixSuffixText = null;
+            this.addProducts_prodId.ReadOnly = false;
+            this.addProducts_prodId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addProducts_prodId.SelectedText = "";
+            this.addProducts_prodId.SelectionLength = 0;
+            this.addProducts_prodId.SelectionStart = 0;
+            this.addProducts_prodId.ShortcutsEnabled = true;
+            this.addProducts_prodId.Size = new System.Drawing.Size(257, 48);
+            this.addProducts_prodId.TabIndex = 18;
+            this.addProducts_prodId.TabStop = false;
+            this.addProducts_prodId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addProducts_prodId.TrailingIcon = null;
+            this.addProducts_prodId.UseSystemPasswordChar = false;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.addProducts_imageView);
-            this.panel2.Location = new System.Drawing.Point(272, 203);
+            this.panel2.Location = new System.Drawing.Point(258, 248);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(148, 100);
@@ -178,128 +346,70 @@
             this.addProducts_imageView.TabIndex = 0;
             this.addProducts_imageView.TabStop = false;
             // 
-            // addProducts_status
-            // 
-            this.addProducts_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_status.FormattingEnabled = true;
-            this.addProducts_status.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.addProducts_status.Location = new System.Drawing.Point(794, 145);
-            this.addProducts_status.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_status.Name = "addProducts_status";
-            this.addProducts_status.Size = new System.Drawing.Size(223, 32);
-            this.addProducts_status.TabIndex = 11;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(706, 146);
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(783, 186);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 24);
+            this.label6.Size = new System.Drawing.Size(62, 22);
             this.label6.TabIndex = 10;
             this.label6.Text = "Statut";
-            // 
-            // addProducts_stock
-            // 
-            this.addProducts_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_stock.Location = new System.Drawing.Point(272, 148);
-            this.addProducts_stock.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_stock.Name = "addProducts_stock";
-            this.addProducts_stock.Size = new System.Drawing.Size(223, 29);
-            this.addProducts_stock.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(180, 149);
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(180, 186);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 24);
+            this.label5.Size = new System.Drawing.Size(57, 22);
             this.label5.TabIndex = 8;
             this.label5.Text = "Stock";
-            // 
-            // addProducts_price
-            // 
-            this.addProducts_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_price.Location = new System.Drawing.Point(794, 85);
-            this.addProducts_price.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_price.Name = "addProducts_price";
-            this.addProducts_price.Size = new System.Drawing.Size(223, 29);
-            this.addProducts_price.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(721, 86);
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(803, 115);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 24);
+            this.label4.Size = new System.Drawing.Size(42, 22);
             this.label4.TabIndex = 6;
             this.label4.Text = "Prix";
-            // 
-            // addProducts_category
-            // 
-            this.addProducts_category.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_category.FormattingEnabled = true;
-            this.addProducts_category.Location = new System.Drawing.Point(794, 25);
-            this.addProducts_category.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_category.Name = "addProducts_category";
-            this.addProducts_category.Size = new System.Drawing.Size(223, 32);
-            this.addProducts_category.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(671, 25);
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(753, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 24);
+            this.label3.Size = new System.Drawing.Size(92, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Catégorie";
-            // 
-            // addProducts_prodName
-            // 
-            this.addProducts_prodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_prodName.Location = new System.Drawing.Point(272, 87);
-            this.addProducts_prodName.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_prodName.Name = "addProducts_prodName";
-            this.addProducts_prodName.Size = new System.Drawing.Size(223, 29);
-            this.addProducts_prodName.TabIndex = 3;
-            // 
-            // addProducts_prodId
-            // 
-            this.addProducts_prodId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_prodId.Location = new System.Drawing.Point(272, 28);
-            this.addProducts_prodId.Margin = new System.Windows.Forms.Padding(4);
-            this.addProducts_prodId.Name = "addProducts_prodId";
-            this.addProducts_prodId.Size = new System.Drawing.Size(223, 29);
-            this.addProducts_prodId.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 92);
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(93, 115);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 24);
+            this.label2.Size = new System.Drawing.Size(144, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nom du produit";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 33);
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(144, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 24);
+            this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id Produit";
             // 
@@ -307,9 +417,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(38, 349);
+            this.panel3.Location = new System.Drawing.Point(38, 388);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1249, 362);
+            this.panel3.Size = new System.Drawing.Size(1353, 381);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -346,9 +456,29 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1215, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(1319, 350);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // clearProdBtn
+            // 
+            this.clearProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clearProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.clearProdBtn.Depth = 0;
+            this.clearProdBtn.HighEmphasis = true;
+            this.clearProdBtn.Icon = null;
+            this.clearProdBtn.Location = new System.Drawing.Point(1064, 312);
+            this.clearProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.clearProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.clearProdBtn.Name = "clearProdBtn";
+            this.clearProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.clearProdBtn.Size = new System.Drawing.Size(83, 36);
+            this.clearProdBtn.TabIndex = 28;
+            this.clearProdBtn.Text = "effacer";
+            this.clearProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.clearProdBtn.UseAccentColor = false;
+            this.clearProdBtn.UseVisualStyleBackColor = true;
+            this.clearProdBtn.Click += new System.EventHandler(this.clearProdBtn_Click);
             // 
             // adminAddProducts
             // 
@@ -358,7 +488,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "adminAddProducts";
-            this.Size = new System.Drawing.Size(1324, 729);
+            this.Size = new System.Drawing.Size(1428, 804);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -372,26 +502,31 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox addProducts_prodName;
-        private System.Windows.Forms.TextBox addProducts_prodId;
+       
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox addProducts_stock;
+       
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox addProducts_price;
+        
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox addProducts_category;
+       
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox addProducts_status;
+       
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox addProducts_imageView;
-        private System.Windows.Forms.Button addProducts_importBtn;
-        private System.Windows.Forms.Button addProducts_addBtn;
-        private System.Windows.Forms.Button addProducts_updateBtn;
-        private System.Windows.Forms.Button addProducts_deleteBtn;
-        private System.Windows.Forms.Button addProducts_clearBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MaterialSkin.Controls.MaterialTextBox2 addProducts_prodId;
+        private MaterialSkin.Controls.MaterialTextBox2 addProducts_prodName;
+        private MaterialSkin.Controls.MaterialTextBox2 addProducts_stock;
+        private MaterialSkin.Controls.MaterialButton addProdImportBtn;
+        private MaterialSkin.Controls.MaterialComboBox addProducts_category;
+        private MaterialSkin.Controls.MaterialTextBox2 addProducts_price;
+        private MaterialSkin.Controls.MaterialComboBox addProducts_status;
+        private MaterialSkin.Controls.MaterialButton addProdBtn;
+        private MaterialSkin.Controls.MaterialButton delProdBtn;
+        private MaterialSkin.Controls.MaterialButton updProdBtn;
+        private MaterialSkin.Controls.MaterialButton clearProdBtn;
     }
 }

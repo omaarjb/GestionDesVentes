@@ -45,7 +45,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(25, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1271, 680);
+            this.panel1.Size = new System.Drawing.Size(1370, 742);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -81,7 +81,7 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1218, 587);
+            this.dataGridView1.Size = new System.Drawing.Size(1325, 655);
             this.dataGridView1.TabIndex = 8;
             // 
             // label1
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "customerHistoriqueCommande";
-            this.Size = new System.Drawing.Size(1324, 729);
+            this.Size = new System.Drawing.Size(1429, 804);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

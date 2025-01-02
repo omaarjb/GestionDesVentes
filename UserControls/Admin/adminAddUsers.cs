@@ -50,7 +50,40 @@ namespace GestionDeVente
 
 
 
-        private void addUsers_addBtn_Click(object sender, EventArgs e)
+
+
+        RegisterForm registerForm = new RegisterForm();
+
+        public void clearFields()
+        {
+            addUsers_username.Text = "";
+            addUsers_password.Text = "";
+            addUsers_ConfirmPassword.Text = "";
+            addUsers_role.SelectedIndex = -1;
+            addUsers_status.SelectedIndex = -1;
+
+        }
+
+
+
+
+        private int getID = 0;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                getID = Convert.ToInt32(row.Cells[0].Value);
+                addUsers_username.Text = row.Cells[1].Value.ToString();
+                addUsers_password.Text = row.Cells[2].Value.ToString();
+                addUsers_role.SelectedItem = row.Cells[3].Value.ToString();
+                addUsers_status.SelectedItem = row.Cells[4].Value.ToString();
+            }
+        }
+
+
+
+        private void admAddUsrBtn_Click(object sender, EventArgs e)
         {
             if (addUsers_username.Text == "" || addUsers_password.Text == "" || addUsers_ConfirmPassword.Text == "" || addUsers_role.SelectedIndex == -1 || addUsers_status.SelectedIndex == -1)
             {
@@ -109,24 +142,7 @@ namespace GestionDeVente
             displayAddUsers();
         }
 
-        RegisterForm registerForm = new RegisterForm();
-
-        public void clearFields()
-        {
-            addUsers_username.Text = "";
-            addUsers_password.Text = "";
-            addUsers_ConfirmPassword.Text = "";
-            addUsers_role.SelectedIndex = -1;
-            addUsers_status.SelectedIndex = -1;
-
-        }
-
-        private void addUsers_clearBtn_Click(object sender, EventArgs e)
-        {
-            clearFields();
-        }
-
-        private void addUsers_updateBtn_Click(object sender, EventArgs e)
+        private void admUbdUsrBtn_Click(object sender, EventArgs e)
         {
             if (addUsers_username.Text == "" || addUsers_password.Text == "" || addUsers_ConfirmPassword.Text == "" || addUsers_role.SelectedIndex == -1 || addUsers_status.SelectedIndex == -1)
             {
@@ -201,21 +217,8 @@ namespace GestionDeVente
                 displayAddUsers();
             }
         }
-        private int getID = 0;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                getID = Convert.ToInt32(row.Cells[0].Value);
-                addUsers_username.Text = row.Cells[1].Value.ToString();
-                addUsers_password.Text = row.Cells[2].Value.ToString();
-                addUsers_role.SelectedItem = row.Cells[3].Value.ToString();
-                addUsers_status.SelectedItem = row.Cells[4].Value.ToString();
-            }
-        }
 
-        private void addUsers_deleteBtn_Click(object sender, EventArgs e)
+        private void admDelUsrBtn_Click(object sender, EventArgs e)
         {
             if (addUsers_username.Text == "" || addUsers_password.Text == "" || addUsers_role.SelectedIndex == -1 || addUsers_status.SelectedIndex == -1)
             {
@@ -242,6 +245,16 @@ namespace GestionDeVente
                 }
 
             }
+        }
+
+        private void admClearUsrBtn_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -47,7 +47,65 @@ namespace GestionDeVente
             }
         }
 
-        private void addProducts_importBtn_Click(object sender, System.EventArgs e)
+
+
+
+        public void clearFields()
+        {
+            addProducts_prodId.Text = "";
+            addProducts_prodName.Text = "";
+            addProducts_category.SelectedIndex = -1;
+            addProducts_price.Text = "";
+            addProducts_stock.Text = "";
+            addProducts_status.SelectedIndex = -1;
+            addProducts_imageView.Image = null;
+
+        }
+
+        public void displayProducts()
+        {
+            Produits adminAddProductsData = new Produits();
+            List<Produits> listData = adminAddProductsData.listAddProductsData();
+            dataGridView1.DataSource = listData;
+
+        }
+
+
+        private int getID = 0;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                getID = Convert.ToInt32(row.Cells[0].Value);
+                addProducts_prodId.Text = row.Cells[1].Value.ToString();
+                addProducts_prodName.Text = row.Cells[2].Value.ToString();
+                addProducts_category.SelectedItem = row.Cells[3].Value.ToString();
+                addProducts_price.Text = row.Cells[4].Value.ToString();
+                addProducts_stock.Text = row.Cells[5].Value.ToString();
+                addProducts_status.SelectedItem = row.Cells[6].Value.ToString();
+
+                string imagePath = row.Cells[8].Value.ToString();
+                try
+                {
+                    if (imagePath != null)
+                    {
+                        addProducts_imageView.Image = Image.FromFile(imagePath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur ssss: " + ex, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+
+
+
+
+        private void addProdImportBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -65,10 +123,14 @@ namespace GestionDeVente
             {
                 MessageBox.Show("Erreur : " + ex, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void addProducts_addBtn_Click(object sender, EventArgs e)
+        private void addProdBtn_Click(object sender, EventArgs e)
         {
             if (addProducts_prodName.Text == "" || addProducts_prodId.Text == "" || addProducts_price.Text == "" || addProducts_price.Text == "" || addProducts_status.SelectedIndex == -1 || addProducts_category.SelectedIndex == -1)
             {
@@ -133,29 +195,38 @@ namespace GestionDeVente
                 displayProducts();
             }
 
-
         }
-        public void clearFields()
+
+        private void delProdBtn_Click(object sender, EventArgs e)
         {
-            addProducts_prodId.Text = "";
-            addProducts_prodName.Text = "";
-            addProducts_category.SelectedIndex = -1;
-            addProducts_price.Text = "";
-            addProducts_stock.Text = "";
-            addProducts_status.SelectedIndex = -1;
-            addProducts_imageView.Image = null;
+            if (addProducts_prodName.Text == "" || addProducts_prodId.Text == "" || addProducts_price.Text == "" || addProducts_price.Text == "" || addProducts_status.SelectedIndex == -1 || addProducts_category.SelectedIndex == -1 || addProducts_imageView.Image == null)
+            {
+                MessageBox.Show("Sélectionner le produit à supprimer !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous supprimer le produit ID : " + addProducts_prodId.Text.Trim() + " ? ", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
 
+                        string deleteProduct = "DELETE FROM produits WHERE id = @id";
+                        using (SqlCommand deleteProductCmd = new SqlCommand(deleteProduct, conn))
+                        {
+                            deleteProductCmd.Parameters.AddWithValue("@id", getID);
+                            deleteProductCmd.ExecuteNonQuery();
+                            clearFields();
+                            MessageBox.Show("Produit supprimé avec succès !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    displayProducts();
+                }
+
+            }
         }
 
-        public void displayProducts()
-        {
-            Produits adminAddProductsData = new Produits();
-            List<Produits> listData = adminAddProductsData.listAddProductsData();
-            dataGridView1.DataSource = listData;
-
-        }
-
-        private void addProducts_updateBtn_Click(object sender, EventArgs e)
+        private void updProdBtn_Click(object sender, EventArgs e)
         {
             if (addProducts_prodName.Text == "" || addProducts_prodId.Text == "" || addProducts_price.Text == "" || addProducts_price.Text == "" || addProducts_status.SelectedIndex == -1 || addProducts_category.SelectedIndex == -1 || addProducts_imageView.Image == null)
             {
@@ -227,68 +298,9 @@ namespace GestionDeVente
             }
         }
 
-        private int getID = 0;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                getID = Convert.ToInt32(row.Cells[0].Value);
-                addProducts_prodId.Text = row.Cells[1].Value.ToString();
-                addProducts_prodName.Text = row.Cells[2].Value.ToString();
-                addProducts_category.SelectedItem = row.Cells[3].Value.ToString();
-                addProducts_price.Text = row.Cells[4].Value.ToString();
-                addProducts_stock.Text = row.Cells[5].Value.ToString();
-                addProducts_status.SelectedItem = row.Cells[6].Value.ToString();
-
-                string imagePath = row.Cells[8].Value.ToString();
-                try
-                {
-                    if (imagePath != null)
-                    {
-                        addProducts_imageView.Image = Image.FromFile(imagePath);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur ssss: " + ex, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-        }
-
-        private void addProducts_clearBtn_Click(object sender, EventArgs e)
+        private void clearProdBtn_Click(object sender, EventArgs e)
         {
             clearFields();
-        }
-
-        private void addProducts_deleteBtn_Click(object sender, EventArgs e)
-        {
-            if (addProducts_prodName.Text == "" || addProducts_prodId.Text == "" || addProducts_price.Text == "" || addProducts_price.Text == "" || addProducts_status.SelectedIndex == -1 || addProducts_category.SelectedIndex == -1 || addProducts_imageView.Image == null)
-            {
-                MessageBox.Show("Sélectionner le produit à supprimer !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (MessageBox.Show("Voulez vous supprimer le produit ID : " + addProducts_prodId.Text.Trim() + " ? ", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        conn.Open();
-
-                        string deleteProduct = "DELETE FROM produits WHERE id = @id";
-                        using (SqlCommand deleteProductCmd = new SqlCommand(deleteProduct, conn))
-                        {
-                            deleteProductCmd.Parameters.AddWithValue("@id", getID);
-                            deleteProductCmd.ExecuteNonQuery();
-                            clearFields();
-                            MessageBox.Show("Produit supprimé avec succès !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    displayProducts();
-                }
-
-            }
         }
     }
 
