@@ -12,6 +12,7 @@ namespace GestionDeVente
         public int CaissierId { get; set; }
         public string Price { get; set; }
         public string Quantity { get; set; }
+        public string ProductName { get; set; }
 
 
 
@@ -52,6 +53,7 @@ namespace GestionDeVente
                             caissierOrdersData.CaissierId = (int)reader["caissierId"];
                             caissierOrdersData.Price = reader["prix"].ToString();
                             caissierOrdersData.Quantity = reader["quantite"].ToString();
+                            caissierOrdersData.ProductName = reader["prodName"].ToString();
 
                             listData.Add(caissierOrdersData);
 

@@ -40,12 +40,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(26, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1375, 747);
+            this.panel1.Size = new System.Drawing.Size(1375, 664);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -82,7 +82,7 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1327, 650);
+            this.dataGridView1.Size = new System.Drawing.Size(1327, 579);
             this.dataGridView1.TabIndex = 8;
             // 
             // label1
@@ -92,7 +92,7 @@
             this.label1.Location = new System.Drawing.Point(22, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 36);
+            this.label1.Size = new System.Drawing.Size(279, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "Historique des transactions";
             // 
@@ -102,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "adminHistorique";
-            this.Size = new System.Drawing.Size(1429, 804);
+            this.Size = new System.Drawing.Size(1429, 709);
             this.Load += new System.EventHandler(this.adminHistorique_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

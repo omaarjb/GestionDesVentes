@@ -38,19 +38,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.welcomeAdmin = new System.Windows.Forms.Label();
             this.decBtn = new MaterialSkin.Controls.MaterialButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.adminDashboard1 = new GestionDeVente.adminDashboard();
-            this.adminAddUsers1 = new GestionDeVente.adminAddUsers();
-            this.adminAddProducts1 = new GestionDeVente.adminAddProducts();
-            this.adminAddCategories1 = new GestionDeVente.adminAddCategories();
             this.adminHistorique1 = new GestionDeVente.adminHistorique();
+            this.adminAddCategories1 = new GestionDeVente.adminAddCategories();
+            this.adminAddProducts1 = new GestionDeVente.adminAddProducts();
+            this.adminAddUsers1 = new GestionDeVente.adminAddUsers();
+            this.adminDashboard1 = new GestionDeVente.adminDashboard();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.histBtn);
             this.panel1.Controls.Add(this.catBtn);
             this.panel1.Controls.Add(this.productBtn);
@@ -62,7 +60,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1429, 166);
+            this.panel1.Size = new System.Drawing.Size(1429, 119);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -73,7 +71,7 @@
             this.histBtn.Depth = 0;
             this.histBtn.HighEmphasis = true;
             this.histBtn.Icon = null;
-            this.histBtn.Location = new System.Drawing.Point(946, 86);
+            this.histBtn.Location = new System.Drawing.Point(942, 59);
             this.histBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.histBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.histBtn.Name = "histBtn";
@@ -93,7 +91,7 @@
             this.catBtn.Depth = 0;
             this.catBtn.HighEmphasis = true;
             this.catBtn.Icon = null;
-            this.catBtn.Location = new System.Drawing.Point(704, 86);
+            this.catBtn.Location = new System.Drawing.Point(701, 59);
             this.catBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.catBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.catBtn.Name = "catBtn";
@@ -113,7 +111,7 @@
             this.productBtn.Depth = 0;
             this.productBtn.HighEmphasis = true;
             this.productBtn.Icon = null;
-            this.productBtn.Location = new System.Drawing.Point(476, 86);
+            this.productBtn.Location = new System.Drawing.Point(472, 59);
             this.productBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.productBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.productBtn.Name = "productBtn";
@@ -133,7 +131,7 @@
             this.usersBtn.Depth = 0;
             this.usersBtn.HighEmphasis = true;
             this.usersBtn.Icon = null;
-            this.usersBtn.Location = new System.Drawing.Point(223, 86);
+            this.usersBtn.Location = new System.Drawing.Point(222, 59);
             this.usersBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.usersBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.usersBtn.Name = "usersBtn";
@@ -153,7 +151,7 @@
             this.dashboard_btn.Depth = 0;
             this.dashboard_btn.HighEmphasis = true;
             this.dashboard_btn.Icon = null;
-            this.dashboard_btn.Location = new System.Drawing.Point(36, 86);
+            this.dashboard_btn.Location = new System.Drawing.Point(35, 59);
             this.dashboard_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dashboard_btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.dashboard_btn.Name = "dashboard_btn";
@@ -205,66 +203,56 @@
             this.decBtn.UseVisualStyleBackColor = true;
             this.decBtn.Click += new System.EventHandler(this.decBtn_Click);
             // 
-            // panel3
+            // adminHistorique1
             // 
-            this.panel3.Controls.Add(this.adminDashboard1);
-            this.panel3.Controls.Add(this.adminAddUsers1);
-            this.panel3.Controls.Add(this.adminAddProducts1);
-            this.panel3.Controls.Add(this.adminAddCategories1);
-            this.panel3.Controls.Add(this.adminHistorique1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 230);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1429, 805);
-            this.panel3.TabIndex = 1;
-            // 
-            // adminDashboard1
-            // 
-            this.adminDashboard1.Location = new System.Drawing.Point(-4, 0);
-            this.adminDashboard1.Margin = new System.Windows.Forms.Padding(4);
-            this.adminDashboard1.Name = "adminDashboard1";
-            this.adminDashboard1.Size = new System.Drawing.Size(1429, 804);
-            this.adminDashboard1.TabIndex = 4;
-            // 
-            // adminAddUsers1
-            // 
-            this.adminAddUsers1.Location = new System.Drawing.Point(-3, 0);
-            this.adminAddUsers1.Margin = new System.Windows.Forms.Padding(4);
-            this.adminAddUsers1.Name = "adminAddUsers1";
-            this.adminAddUsers1.Size = new System.Drawing.Size(1429, 804);
-            this.adminAddUsers1.TabIndex = 3;
-            // 
-            // adminAddProducts1
-            // 
-            this.adminAddProducts1.Location = new System.Drawing.Point(0, 0);
-            this.adminAddProducts1.Margin = new System.Windows.Forms.Padding(4);
-            this.adminAddProducts1.Name = "adminAddProducts1";
-            this.adminAddProducts1.Size = new System.Drawing.Size(1428, 804);
-            this.adminAddProducts1.TabIndex = 2;
+            this.adminHistorique1.Location = new System.Drawing.Point(6, 188);
+            this.adminHistorique1.Name = "adminHistorique1";
+            this.adminHistorique1.Size = new System.Drawing.Size(1429, 709);
+            this.adminHistorique1.TabIndex = 13;
             // 
             // adminAddCategories1
             // 
-            this.adminAddCategories1.Location = new System.Drawing.Point(0, 1);
+            this.adminAddCategories1.Location = new System.Drawing.Point(0, 187);
             this.adminAddCategories1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminAddCategories1.Name = "adminAddCategories1";
-            this.adminAddCategories1.Size = new System.Drawing.Size(1429, 804);
-            this.adminAddCategories1.TabIndex = 1;
+            this.adminAddCategories1.Size = new System.Drawing.Size(1429, 710);
+            this.adminAddCategories1.TabIndex = 14;
             // 
-            // adminHistorique1
+            // adminAddProducts1
             // 
-            this.adminHistorique1.Location = new System.Drawing.Point(-3, 1);
-            this.adminHistorique1.Name = "adminHistorique1";
-            this.adminHistorique1.Size = new System.Drawing.Size(1429, 804);
-            this.adminHistorique1.TabIndex = 0;
+            this.adminAddProducts1.Location = new System.Drawing.Point(3, 187);
+            this.adminAddProducts1.Margin = new System.Windows.Forms.Padding(4);
+            this.adminAddProducts1.Name = "adminAddProducts1";
+            this.adminAddProducts1.Size = new System.Drawing.Size(1428, 709);
+            this.adminAddProducts1.TabIndex = 15;
+            // 
+            // adminAddUsers1
+            // 
+            this.adminAddUsers1.Location = new System.Drawing.Point(3, 186);
+            this.adminAddUsers1.Margin = new System.Windows.Forms.Padding(4);
+            this.adminAddUsers1.Name = "adminAddUsers1";
+            this.adminAddUsers1.Size = new System.Drawing.Size(1429, 710);
+            this.adminAddUsers1.TabIndex = 16;
+            // 
+            // adminDashboard1
+            // 
+            this.adminDashboard1.Location = new System.Drawing.Point(-1, 188);
+            this.adminDashboard1.Margin = new System.Windows.Forms.Padding(4);
+            this.adminDashboard1.Name = "adminDashboard1";
+            this.adminDashboard1.Size = new System.Drawing.Size(1429, 709);
+            this.adminDashboard1.TabIndex = 17;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 1038);
+            this.Controls.Add(this.adminDashboard1);
+            this.Controls.Add(this.adminAddUsers1);
+            this.Controls.Add(this.adminAddProducts1);
+            this.Controls.Add(this.adminAddCategories1);
+            this.Controls.Add(this.adminHistorique1);
             this.Controls.Add(this.decBtn);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -273,7 +261,6 @@
             this.Text = "Admin - Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +271,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label welcomeAdmin;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialButton dashboard_btn;
         private MaterialSkin.Controls.MaterialButton usersBtn;
         private MaterialSkin.Controls.MaterialButton productBtn;
@@ -292,9 +278,9 @@
         private MaterialSkin.Controls.MaterialButton histBtn;
         private MaterialSkin.Controls.MaterialButton decBtn;
         private adminHistorique adminHistorique1;
-        private adminDashboard adminDashboard1;
-        private adminAddUsers adminAddUsers1;
-        private adminAddProducts adminAddProducts1;
         private adminAddCategories adminAddCategories1;
+        private adminAddProducts adminAddProducts1;
+        private adminAddUsers adminAddUsers1;
+        private adminDashboard adminDashboard1;
     }
 }

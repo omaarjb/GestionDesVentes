@@ -1,7 +1,15 @@
-﻿using System;
+﻿using iText.IO.Font.Constants;
+using iText.IO.Image;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas.Draw;
+using iText.Layout;
+using iText.Layout.Borders;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using System;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Printing;
 using System.Windows.Forms;
 
 
@@ -179,77 +187,6 @@ namespace GestionDeVente
 
 
 
-        private int rowIndex = 0;
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            float totalPrice = getTotal();
-            float y = 0;
-            int count = 0;
-            int colWidth = 120;
-            int tableMargin = 20;
-            int headerMargin = 10;
-
-            Font font = new Font("Arial", 12);
-            Font bold = new Font("Arial", 12, FontStyle.Bold);
-            Font headerFont = new Font("Arial", 16, FontStyle.Bold);
-            Font labelFont = new Font("Arial", 14, FontStyle.Bold);
-
-            float margin = e.MarginBounds.Top;
-
-            StringFormat alignCenter = new StringFormat();
-            alignCenter.Alignment = StringAlignment.Center;
-            alignCenter.LineAlignment = StringAlignment.Center;
-
-            string headerText = "Bakery World";
-            y = (margin + count * headerFont.GetHeight(e.Graphics) + headerMargin);
-            e.Graphics.DrawString(headerText, headerFont, Brushes.Black, e.MarginBounds.Left + (dataGridView1.Columns.Count / 2) * colWidth, y, alignCenter);
-
-            count++;
-            y += tableMargin;
-            string[] header = { "Id", "idClient", "idCaissier", "Prix", "Quantité" };
-            for (int i = 0; i < header.Length; i++)
-            {
-                y = margin + count * bold.GetHeight(e.Graphics) + tableMargin;
-                e.Graphics.DrawString(header[i], bold, Brushes.Black, e.MarginBounds.Left + i * colWidth, y, alignCenter);
-            }
-            count++;
-            float rSpace = e.MarginBounds.Bottom - y;
-
-            while (rowIndex < dataGridView1.Rows.Count)
-            {
-                DataGridViewRow row = dataGridView1.Rows[rowIndex];
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                {
-                    object cellValue = row.Cells[i].Value;
-                    string cell = (cellValue != null) ? cellValue.ToString() : string.Empty;
-
-                    y = margin + count * font.GetHeight(e.Graphics) + tableMargin;
-                    e.Graphics.DrawString(cell, font, Brushes.Black, e.MarginBounds.Left + i * colWidth, y, alignCenter);
-                }
-                count++;
-                rowIndex++;
-                if (y + font.GetHeight(e.Graphics) > e.MarginBounds.Bottom)
-                {
-                    e.HasMorePages = true;
-                    return;
-                }
-                int labelMargin = (int)Math.Min(rSpace, 200);
-                DateTime today = DateTime.Now;
-                float labelX = e.MarginBounds.Right - e.Graphics.MeasureString("-----------------------------------", labelFont).Width;
-                y = e.MarginBounds.Bottom - labelMargin - labelFont.GetHeight(e.Graphics);
-                e.Graphics.DrawString("Prix Total : \tDhs" + totalPrice + "\nMontant : \tDhs" + getAmount() + "\n\t\t-----------\nReste : \tDhs" + getChange(), labelFont, Brushes.Black, labelX, y);
-                labelMargin = (int)Math.Min(rSpace, -40);
-
-                string labelText = today.ToString();
-                y = e.MarginBounds.Bottom - labelMargin - labelFont.GetHeight(e.Graphics);
-                e.Graphics.DrawString(labelText, labelFont, Brushes.Black, e.MarginBounds.Right - e.Graphics.MeasureString("-----------------------------------", labelFont).Width, y);
-            }
-        }
-
-        private void printDocument1_BeginPrint(object sender, PrintEventArgs e)
-        {
-            rowIndex = 0;
-        }
 
         private void addOrdBtn_Click(object sender, EventArgs e)
         {
@@ -263,8 +200,8 @@ namespace GestionDeVente
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string insertData = "INSERT INTO orders (idClient,prix, quantite, statut, dateCommande, caissierid) " +
-                                "VALUES (@idClient, @prix, @quantite, @statut, @dateCommande, @caissierid)";
+                    string insertData = "INSERT INTO orders (idClient,prix, quantite, statut, dateCommande, caissierid,prodName) " +
+                                "VALUES (@idClient, @prix, @quantite, @statut, @dateCommande, @caissierid,@prodName)";
                     using (SqlCommand insertDatacmd = new SqlCommand(insertData, conn))
                     {
                         insertDatacmd.Parameters.AddWithValue("@idClient", generateID());
@@ -274,6 +211,8 @@ namespace GestionDeVente
                         DateTime today = DateTime.Today;
                         insertDatacmd.Parameters.AddWithValue("@dateCommande", today);
                         insertDatacmd.Parameters.AddWithValue("@caissierId", UserSession.UserId);
+                        insertDatacmd.Parameters.AddWithValue("@prodName", orders_prodName.Text.Trim());
+
 
                         insertDatacmd.ExecuteNonQuery();
                         MessageBox.Show("Commande ajoutée avec succès !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -325,12 +264,18 @@ namespace GestionDeVente
                             latestOrderId = Convert.ToInt32(getLatestCmd.ExecuteScalar());
                         }
 
-                        string insertTransaction = "INSERT INTO transactions (idClient, order_id,caissier_id, prixTotal, statut, dateTransaction) VALUES (@idClient, @order_id,@caissier_id, @prixTotal, @statut, @dateTransaction)";
+                        string insertTransaction = @"
+                        INSERT INTO transactions 
+                        (idClient, order_id, caissier_id, product_id, prixTotal, statut, dateTransaction) 
+                        VALUES 
+                        (@idClient, @order_id, @caissier_id, @product_id, @prixTotal, @statut, @dateTransaction)";
+
                         using (SqlCommand insertTransactionCmd = new SqlCommand(insertTransaction, conn))
                         {
                             insertTransactionCmd.Parameters.AddWithValue("@idClient", idClient);
                             insertTransactionCmd.Parameters.AddWithValue("@order_id", latestOrderId);
                             insertTransactionCmd.Parameters.AddWithValue("@caissier_id", UserSession.UserId);
+                            insertTransactionCmd.Parameters.AddWithValue("@product_id", orders_prodId.SelectedItem.ToString());
                             insertTransactionCmd.Parameters.AddWithValue("@prixTotal", orders_totalPrice.Text.Trim());
                             insertTransactionCmd.Parameters.AddWithValue("@statut", "Completed");
                             insertTransactionCmd.Parameters.AddWithValue("@dateTransaction", DateTime.Today);
@@ -354,11 +299,152 @@ namespace GestionDeVente
 
         private void ordReceipBtn_Click(object sender, EventArgs e)
         {
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-            printDocument1.BeginPrint += new PrintEventHandler(printDocument1_BeginPrint);
+            string pdfPath = "Facture.pdf";
+            string logoPath = "C:\\Users\\omarj\\OneDrive\\Desktop\\images .net\\logo.jpg";
 
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.ShowDialog();
+
+            using (PdfWriter writer = new PdfWriter(pdfPath))
+            {
+                using (PdfDocument pdf = new PdfDocument(writer))
+                {
+                    Document document = new Document(pdf);
+
+
+                    ImageData imageData = ImageDataFactory.Create(logoPath);
+                    Image logo = new Image(imageData)
+                        .SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER)
+                        .SetMaxWidth(100); // Adjust width if needed
+                    document.Add(logo);
+
+
+                    PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                    PdfFont boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                    PdfFont italicFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_OBLIQUE);
+
+
+                    document.Add(new Paragraph("Boulangerie Patisserie")
+                        .SetFont(boldFont)
+                        .SetFontSize(24)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(5));
+
+
+                    document.Add(new Paragraph("Votre Meilleur Choix")
+                        .SetFont(italicFont)
+                        .SetFontSize(12)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(20)
+                        .SetFontColor(ColorConstants.GRAY));
+
+
+                    LineSeparator line = new LineSeparator(new SolidLine(1f));
+                    document.Add(line.SetMarginBottom(20));
+
+
+                    float[] columnWidths = { 1, 2, 2, 2, 2, 2 };
+                    Table table = new Table(columnWidths)
+                        .UseAllAvailableWidth()
+                        .SetMarginBottom(20);
+
+                    string[] headers = { "N° Commande", "N° Client", "N° Caissier", "Prix", "Quantité", "Produit" };
+
+
+                    foreach (string header in headers)
+                    {
+                        table.AddHeaderCell(new Cell()
+                            .Add(new Paragraph(header)
+                            .SetFont(boldFont)
+                            .SetFontSize(11))
+                            .SetBackgroundColor(new DeviceRgb(240, 240, 240))
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetPadding(8));
+                    }
+
+
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                        {
+                            object cellValue = row.Cells[i].Value;
+                            string cellText;
+
+
+                            if (i == 3 && cellValue != null)
+                            {
+                                cellText = $"{cellValue:F2} Dhs";
+                            }
+                            else
+                            {
+                                cellText = cellValue != null ? cellValue.ToString() : string.Empty;
+                            }
+
+                            table.AddCell(new Cell()
+                                .Add(new Paragraph(cellText)
+                                .SetFont(font)
+                                .SetFontSize(10))
+                                .SetTextAlignment(TextAlignment.CENTER)
+                                .SetPadding(8));
+                        }
+                    }
+
+                    document.Add(table);
+
+
+                    document.Add(line.SetMarginBottom(20));
+
+
+                    Table priceTable = new Table(2).UseAllAvailableWidth();
+
+                    float totalPrice = getTotal();
+                    float amountPaid = getAmount();
+                    float change = getChange();
+
+
+                    AddPriceRow(priceTable, "Prix Total:", totalPrice, font, boldFont);
+                    AddPriceRow(priceTable, "Montant Payé:", amountPaid, font, boldFont);
+                    AddPriceRow(priceTable, "Reste:", change, font, boldFont);
+
+                    document.Add(priceTable.SetMarginBottom(20));
+
+
+                    document.Add(new Paragraph("Merci pour votre visite!")
+                        .SetFont(boldFont)
+                        .SetFontSize(14)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .SetMarginBottom(10));
+
+
+                    document.Add(new Paragraph($"Date: {DateTime.Now:dd/MM/yyyy HH:mm}")
+                        .SetFont(font)
+                        .SetFontSize(10)
+                        .SetTextAlignment(TextAlignment.RIGHT)
+                        .SetFontColor(ColorConstants.GRAY));
+
+                    document.Close();
+                }
+            }
+
+            MessageBox.Show("PDF generated successfully at: " + pdfPath, "PDF Generated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            System.Diagnostics.Process.Start(pdfPath);
+        }
+
+        private void AddPriceRow(Table table, string label, float amount, PdfFont font, PdfFont boldFont)
+        {
+            table.AddCell(new Cell()
+                .Add(new Paragraph(label)
+                .SetFont(font)
+                .SetFontSize(12))
+                .SetBorder(Border.NO_BORDER)
+                .SetTextAlignment(TextAlignment.RIGHT));
+
+            table.AddCell(new Cell()
+                .Add(new Paragraph($"{amount:F2} Dhs")
+                .SetFont(boldFont)
+                .SetFontSize(12))
+                .SetBorder(Border.NO_BORDER)
+                .SetTextAlignment(TextAlignment.RIGHT));
         }
 
         private void delOrdBtn_Click(object sender, EventArgs e)

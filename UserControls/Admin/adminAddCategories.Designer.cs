@@ -82,7 +82,7 @@
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(772, 665);
+            this.dataGridView1.Size = new System.Drawing.Size(772, 601);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -122,18 +122,18 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(576, 41);
+            this.panel2.Location = new System.Drawing.Point(573, 15);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(831, 740);
+            this.panel2.Size = new System.Drawing.Size(831, 678);
             this.panel2.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.clearCatBtn);
             this.panel1.Controls.Add(this.delCatBtn);
             this.panel1.Controls.Add(this.ubdCatBtn);
@@ -142,10 +142,10 @@
             this.panel1.Controls.Add(this.addCategories_category);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(34, 41);
+            this.panel1.Location = new System.Drawing.Point(32, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 740);
+            this.panel1.Size = new System.Drawing.Size(512, 678);
             this.panel1.TabIndex = 2;
             // 
             // clearCatBtn
@@ -155,7 +155,7 @@
             this.clearCatBtn.Depth = 0;
             this.clearCatBtn.HighEmphasis = true;
             this.clearCatBtn.Icon = null;
-            this.clearCatBtn.Location = new System.Drawing.Point(265, 569);
+            this.clearCatBtn.Location = new System.Drawing.Point(279, 573);
             this.clearCatBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.clearCatBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.clearCatBtn.Name = "clearCatBtn";
@@ -175,7 +175,7 @@
             this.delCatBtn.Depth = 0;
             this.delCatBtn.HighEmphasis = true;
             this.delCatBtn.Icon = null;
-            this.delCatBtn.Location = new System.Drawing.Point(91, 569);
+            this.delCatBtn.Location = new System.Drawing.Point(105, 573);
             this.delCatBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.delCatBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.delCatBtn.Name = "delCatBtn";
@@ -195,7 +195,7 @@
             this.ubdCatBtn.Depth = 0;
             this.ubdCatBtn.HighEmphasis = true;
             this.ubdCatBtn.Icon = null;
-            this.ubdCatBtn.Location = new System.Drawing.Point(264, 464);
+            this.ubdCatBtn.Location = new System.Drawing.Point(278, 468);
             this.ubdCatBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ubdCatBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ubdCatBtn.Name = "ubdCatBtn";
@@ -215,7 +215,7 @@
             this.addCatBtn.Depth = 0;
             this.addCatBtn.HighEmphasis = true;
             this.addCatBtn.Icon = null;
-            this.addCatBtn.Location = new System.Drawing.Point(91, 464);
+            this.addCatBtn.Location = new System.Drawing.Point(105, 468);
             this.addCatBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addCatBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.addCatBtn.Name = "addCatBtn";
@@ -289,7 +289,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "adminAddCategories";
-            this.Size = new System.Drawing.Size(1429, 804);
+            this.Size = new System.Drawing.Size(1429, 710);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

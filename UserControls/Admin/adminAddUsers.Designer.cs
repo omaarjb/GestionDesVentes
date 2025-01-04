@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.admClearUsrBtn = new MaterialSkin.Controls.MaterialButton();
             this.admDelUsrBtn = new MaterialSkin.Controls.MaterialButton();
             this.admUbdUsrBtn = new MaterialSkin.Controls.MaterialButton();
             this.admAddUsrBtn = new MaterialSkin.Controls.MaterialButton();
@@ -48,7 +49,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.admClearUsrBtn = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,7 +56,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.admClearUsrBtn);
             this.panel1.Controls.Add(this.admDelUsrBtn);
             this.panel1.Controls.Add(this.admUbdUsrBtn);
@@ -71,11 +71,31 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(50, 18);
+            this.panel1.Location = new System.Drawing.Point(50, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 760);
+            this.panel1.Size = new System.Drawing.Size(518, 692);
             this.panel1.TabIndex = 0;
+            // 
+            // admClearUsrBtn
+            // 
+            this.admClearUsrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.admClearUsrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.admClearUsrBtn.Depth = 0;
+            this.admClearUsrBtn.HighEmphasis = true;
+            this.admClearUsrBtn.Icon = null;
+            this.admClearUsrBtn.Location = new System.Drawing.Point(80, 646);
+            this.admClearUsrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.admClearUsrBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.admClearUsrBtn.Name = "admClearUsrBtn";
+            this.admClearUsrBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.admClearUsrBtn.Size = new System.Drawing.Size(83, 36);
+            this.admClearUsrBtn.TabIndex = 22;
+            this.admClearUsrBtn.Text = "effacer";
+            this.admClearUsrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.admClearUsrBtn.UseAccentColor = false;
+            this.admClearUsrBtn.UseVisualStyleBackColor = true;
+            this.admClearUsrBtn.Click += new System.EventHandler(this.admClearUsrBtn_Click);
             // 
             // admDelUsrBtn
             // 
@@ -84,7 +104,7 @@
             this.admDelUsrBtn.Depth = 0;
             this.admDelUsrBtn.HighEmphasis = true;
             this.admDelUsrBtn.Icon = null;
-            this.admDelUsrBtn.Location = new System.Drawing.Point(283, 648);
+            this.admDelUsrBtn.Location = new System.Drawing.Point(285, 646);
             this.admDelUsrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.admDelUsrBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.admDelUsrBtn.Name = "admDelUsrBtn";
@@ -104,7 +124,7 @@
             this.admUbdUsrBtn.Depth = 0;
             this.admUbdUsrBtn.HighEmphasis = true;
             this.admUbdUsrBtn.Icon = null;
-            this.admUbdUsrBtn.Location = new System.Drawing.Point(283, 577);
+            this.admUbdUsrBtn.Location = new System.Drawing.Point(285, 575);
             this.admUbdUsrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.admUbdUsrBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.admUbdUsrBtn.Name = "admUbdUsrBtn";
@@ -124,7 +144,7 @@
             this.admAddUsrBtn.Depth = 0;
             this.admAddUsrBtn.HighEmphasis = true;
             this.admAddUsrBtn.Icon = null;
-            this.admAddUsrBtn.Location = new System.Drawing.Point(78, 577);
+            this.admAddUsrBtn.Location = new System.Drawing.Point(80, 575);
             this.admAddUsrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.admAddUsrBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.admAddUsrBtn.Name = "admAddUsrBtn";
@@ -330,13 +350,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(588, 18);
+            this.panel2.Location = new System.Drawing.Point(588, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(818, 760);
+            this.panel2.Size = new System.Drawing.Size(818, 692);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -344,35 +364,35 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(30, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 697);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 619);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -381,33 +401,13 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(185, 9);
+            this.label5.Location = new System.Drawing.Point(184, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(326, 29);
             this.label5.TabIndex = 1;
             this.label5.Text = "Les informations des utlisateurs";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // admClearUsrBtn
-            // 
-            this.admClearUsrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.admClearUsrBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.admClearUsrBtn.Depth = 0;
-            this.admClearUsrBtn.HighEmphasis = true;
-            this.admClearUsrBtn.Icon = null;
-            this.admClearUsrBtn.Location = new System.Drawing.Point(78, 648);
-            this.admClearUsrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.admClearUsrBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.admClearUsrBtn.Name = "admClearUsrBtn";
-            this.admClearUsrBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.admClearUsrBtn.Size = new System.Drawing.Size(83, 36);
-            this.admClearUsrBtn.TabIndex = 22;
-            this.admClearUsrBtn.Text = "effacer";
-            this.admClearUsrBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.admClearUsrBtn.UseAccentColor = false;
-            this.admClearUsrBtn.UseVisualStyleBackColor = true;
-            this.admClearUsrBtn.Click += new System.EventHandler(this.admClearUsrBtn_Click);
             // 
             // adminAddUsers
             // 
@@ -417,7 +417,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "adminAddUsers";
-            this.Size = new System.Drawing.Size(1429, 804);
+            this.Size = new System.Drawing.Size(1429, 710);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

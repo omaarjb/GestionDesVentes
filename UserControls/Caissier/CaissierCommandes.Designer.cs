@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaissierCommandes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orders_montant = new MaterialSkin.Controls.MaterialTextBox2();
             this.delOrdBtn = new MaterialSkin.Controls.MaterialButton();
             this.ordReceipBtn = new MaterialSkin.Controls.MaterialButton();
             this.ordPayBtn = new MaterialSkin.Controls.MaterialButton();
@@ -64,7 +65,6 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.orders_montant = new MaterialSkin.Controls.MaterialTextBox2();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.orders_montant);
             this.panel1.Controls.Add(this.delOrdBtn);
             this.panel1.Controls.Add(this.ordReceipBtn);
@@ -90,8 +90,37 @@
             this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(697, 773);
+            this.panel1.Size = new System.Drawing.Size(700, 667);
             this.panel1.TabIndex = 0;
+            // 
+            // orders_montant
+            // 
+            this.orders_montant.AnimateReadOnly = false;
+            this.orders_montant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.orders_montant.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.orders_montant.Depth = 0;
+            this.orders_montant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.orders_montant.HideSelection = true;
+            this.orders_montant.LeadingIcon = null;
+            this.orders_montant.Location = new System.Drawing.Point(194, 430);
+            this.orders_montant.MaxLength = 32767;
+            this.orders_montant.MouseState = MaterialSkin.MouseState.OUT;
+            this.orders_montant.Name = "orders_montant";
+            this.orders_montant.PasswordChar = '\0';
+            this.orders_montant.PrefixSuffixText = null;
+            this.orders_montant.ReadOnly = false;
+            this.orders_montant.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.orders_montant.SelectedText = "";
+            this.orders_montant.SelectionLength = 0;
+            this.orders_montant.SelectionStart = 0;
+            this.orders_montant.ShortcutsEnabled = true;
+            this.orders_montant.Size = new System.Drawing.Size(224, 48);
+            this.orders_montant.TabIndex = 28;
+            this.orders_montant.TabStop = false;
+            this.orders_montant.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.orders_montant.TrailingIcon = null;
+            this.orders_montant.UseSystemPasswordChar = false;
+            this.orders_montant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.orders_montant_KeyDown_2);
             // 
             // delOrdBtn
             // 
@@ -100,7 +129,7 @@
             this.delOrdBtn.Depth = 0;
             this.delOrdBtn.HighEmphasis = true;
             this.delOrdBtn.Icon = null;
-            this.delOrdBtn.Location = new System.Drawing.Point(455, 645);
+            this.delOrdBtn.Location = new System.Drawing.Point(444, 577);
             this.delOrdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.delOrdBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.delOrdBtn.Name = "delOrdBtn";
@@ -120,7 +149,7 @@
             this.ordReceipBtn.Depth = 0;
             this.ordReceipBtn.HighEmphasis = true;
             this.ordReceipBtn.Icon = null;
-            this.ordReceipBtn.Location = new System.Drawing.Point(287, 645);
+            this.ordReceipBtn.Location = new System.Drawing.Point(276, 577);
             this.ordReceipBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ordReceipBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ordReceipBtn.Name = "ordReceipBtn";
@@ -140,7 +169,7 @@
             this.ordPayBtn.Depth = 0;
             this.ordPayBtn.HighEmphasis = true;
             this.ordPayBtn.Icon = null;
-            this.ordPayBtn.Location = new System.Drawing.Point(107, 645);
+            this.ordPayBtn.Location = new System.Drawing.Point(96, 577);
             this.ordPayBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ordPayBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ordPayBtn.Name = "ordPayBtn";
@@ -157,7 +186,7 @@
             // 
             this.orders_change.AutoSize = true;
             this.orders_change.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
-            this.orders_change.Location = new System.Drawing.Point(201, 577);
+            this.orders_change.Location = new System.Drawing.Point(190, 509);
             this.orders_change.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.orders_change.Name = "orders_change";
             this.orders_change.Size = new System.Drawing.Size(44, 22);
@@ -168,7 +197,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(117, 577);
+            this.label14.Location = new System.Drawing.Point(106, 509);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 22);
@@ -179,7 +208,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(90, 508);
+            this.label13.Location = new System.Drawing.Point(79, 440);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 22);
@@ -190,7 +219,7 @@
             // 
             this.orders_totalPrice.AutoSize = true;
             this.orders_totalPrice.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
-            this.orders_totalPrice.Location = new System.Drawing.Point(201, 449);
+            this.orders_totalPrice.Location = new System.Drawing.Point(190, 381);
             this.orders_totalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.orders_totalPrice.Name = "orders_totalPrice";
             this.orders_totalPrice.Size = new System.Drawing.Size(44, 22);
@@ -201,7 +230,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(117, 449);
+            this.label10.Location = new System.Drawing.Point(106, 381);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 22);
@@ -234,7 +263,7 @@
             this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 48);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -252,7 +281,7 @@
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(694, 313);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
@@ -261,7 +290,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(16, 17);
+            this.label5.Location = new System.Drawing.Point(15, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 29);
@@ -270,7 +299,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.orders_prodId);
             this.panel2.Controls.Add(this.orders_category);
             this.panel2.Controls.Add(this.clearOrdBtn);
@@ -286,7 +315,7 @@
             this.panel2.Location = new System.Drawing.Point(732, 12);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(675, 379);
+            this.panel2.Size = new System.Drawing.Size(682, 379);
             this.panel2.TabIndex = 1;
             // 
             // orders_prodId
@@ -464,13 +493,13 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.Controls.Add(this.dataGridView3);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(732, 404);
+            this.panel3.Location = new System.Drawing.Point(732, 395);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(675, 381);
+            this.panel3.Size = new System.Drawing.Size(682, 284);
             this.panel3.TabIndex = 2;
             // 
             // dataGridView3
@@ -488,7 +517,7 @@
             this.dataGridView3.ColumnHeadersHeight = 29;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView3.EnableHeadersVisualStyles = false;
-            this.dataGridView3.Location = new System.Drawing.Point(20, 57);
+            this.dataGridView3.Location = new System.Drawing.Point(20, 31);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
@@ -506,13 +535,12 @@
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(636, 306);
+            this.dataGridView3.Size = new System.Drawing.Size(636, 240);
             this.dataGridView3.TabIndex = 5;
             // 
             // printDocument1
             // 
-            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+           
             // 
             // printPreviewDialog1
             // 
@@ -524,35 +552,6 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // orders_montant
-            // 
-            this.orders_montant.AnimateReadOnly = false;
-            this.orders_montant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.orders_montant.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.orders_montant.Depth = 0;
-            this.orders_montant.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.orders_montant.HideSelection = true;
-            this.orders_montant.LeadingIcon = null;
-            this.orders_montant.Location = new System.Drawing.Point(205, 498);
-            this.orders_montant.MaxLength = 32767;
-            this.orders_montant.MouseState = MaterialSkin.MouseState.OUT;
-            this.orders_montant.Name = "orders_montant";
-            this.orders_montant.PasswordChar = '\0';
-            this.orders_montant.PrefixSuffixText = null;
-            this.orders_montant.ReadOnly = false;
-            this.orders_montant.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.orders_montant.SelectedText = "";
-            this.orders_montant.SelectionLength = 0;
-            this.orders_montant.SelectionStart = 0;
-            this.orders_montant.ShortcutsEnabled = true;
-            this.orders_montant.Size = new System.Drawing.Size(224, 48);
-            this.orders_montant.TabIndex = 28;
-            this.orders_montant.TabStop = false;
-            this.orders_montant.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.orders_montant.TrailingIcon = null;
-            this.orders_montant.UseSystemPasswordChar = false;
-            this.orders_montant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.orders_montant_KeyDown_2);
-            // 
             // CaissierCommandes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -562,7 +561,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CaissierCommandes";
-            this.Size = new System.Drawing.Size(1429, 804);
+            this.Size = new System.Drawing.Size(1429, 710);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

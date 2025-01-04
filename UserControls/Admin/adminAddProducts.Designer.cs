@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clearProdBtn = new MaterialSkin.Controls.MaterialButton();
             this.updProdBtn = new MaterialSkin.Controls.MaterialButton();
             this.delProdBtn = new MaterialSkin.Controls.MaterialButton();
             this.addProdBtn = new MaterialSkin.Controls.MaterialButton();
@@ -52,7 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clearProdBtn = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProducts_imageView)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.clearProdBtn);
             this.panel1.Controls.Add(this.updProdBtn);
             this.panel1.Controls.Add(this.delProdBtn);
@@ -81,11 +81,31 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(38, 15);
+            this.panel1.Location = new System.Drawing.Point(38, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1353, 366);
             this.panel1.TabIndex = 0;
+            // 
+            // clearProdBtn
+            // 
+            this.clearProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.clearProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.clearProdBtn.Depth = 0;
+            this.clearProdBtn.HighEmphasis = true;
+            this.clearProdBtn.Icon = null;
+            this.clearProdBtn.Location = new System.Drawing.Point(1064, 312);
+            this.clearProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.clearProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.clearProdBtn.Name = "clearProdBtn";
+            this.clearProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.clearProdBtn.Size = new System.Drawing.Size(83, 36);
+            this.clearProdBtn.TabIndex = 28;
+            this.clearProdBtn.Text = "effacer";
+            this.clearProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.clearProdBtn.UseAccentColor = false;
+            this.clearProdBtn.UseVisualStyleBackColor = true;
+            this.clearProdBtn.Click += new System.EventHandler(this.clearProdBtn_Click);
             // 
             // updProdBtn
             // 
@@ -415,11 +435,11 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(38, 388);
+            this.panel3.Location = new System.Drawing.Point(38, 377);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1353, 381);
+            this.panel3.Size = new System.Drawing.Size(1353, 323);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -456,29 +476,9 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1319, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(1319, 298);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // clearProdBtn
-            // 
-            this.clearProdBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.clearProdBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.clearProdBtn.Depth = 0;
-            this.clearProdBtn.HighEmphasis = true;
-            this.clearProdBtn.Icon = null;
-            this.clearProdBtn.Location = new System.Drawing.Point(1064, 312);
-            this.clearProdBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.clearProdBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.clearProdBtn.Name = "clearProdBtn";
-            this.clearProdBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.clearProdBtn.Size = new System.Drawing.Size(83, 36);
-            this.clearProdBtn.TabIndex = 28;
-            this.clearProdBtn.Text = "effacer";
-            this.clearProdBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.clearProdBtn.UseAccentColor = false;
-            this.clearProdBtn.UseVisualStyleBackColor = true;
-            this.clearProdBtn.Click += new System.EventHandler(this.clearProdBtn_Click);
             // 
             // adminAddProducts
             // 
@@ -488,7 +488,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "adminAddProducts";
-            this.Size = new System.Drawing.Size(1428, 804);
+            this.Size = new System.Drawing.Size(1428, 709);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
